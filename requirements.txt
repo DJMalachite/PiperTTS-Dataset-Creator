@@ -1,0 +1,4 @@
+pydub
+ffmpeg-python
+openai-whisper
+torch
