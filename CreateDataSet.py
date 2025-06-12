@@ -11,7 +11,8 @@ INPUT_EXTENSION = ".wav"  # change to ".wav" or ".mp3" as needed
 MIN_SILENCE_LEN = 500     # in ms
 SILENCE_THRESH = -40      # in dBFS
 KEEP_SILENCE = 250        # in ms
-WHISPER_MODEL_SIZE = "turbo"
+WHISPER_MODEL_SIZE = "turbo" # Set the OpenAI Whisper model, examples can be found here: https://github.com/openai/whisper?tab=readme-ov-file#available-models-and-languages
+WHISPER_DEVICE = "cuda" # Set between CPU or CUDA for GPU accelleration
 # ===================================
 
 def check_ffmpeg_available():
@@ -95,7 +96,7 @@ def convert_audio(input_folder, output_folder):
     return all_successful
 
 def transcribe_audio(input_folder, output_csv):
-    model = whisper.load_model(WHISPER_MODEL_SIZE, device="cuda")
+    model = whisper.load_model(WHISPER_MODEL_SIZE, device=WHISPER_DEVICE)
 
     print("\n🧠 Step 3: Transcribing audio with Whisper...")
     wav_files = [f for f in os.listdir(input_folder) if f.lower().endswith('.wav')]
