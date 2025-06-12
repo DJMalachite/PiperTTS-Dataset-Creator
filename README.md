@@ -55,11 +55,12 @@ Before running the script, configure the following parameters within the script 
 
 ```python
 # ========== Configuration ==========
-INPUT_EXTENSION = ".mp3"        # Input file format: ".mp3" or ".wav"
-MIN_SILENCE_LEN = 500           # Minimum silence length in milliseconds for chunking
-SILENCE_THRESH = -40            # Silence threshold in dBFS
-KEEP_SILENCE = 250              # Amount of silence to retain at each end of a chunk (in ms)
-WHISPER_MODEL_SIZE = "medium"   # Whisper model size (e.g., tiny, base, small, medium, large)
+INPUT_EXTENSION = ".wav"  # change to ".wav" or ".mp3" as needed
+MIN_SILENCE_LEN = 500     # in ms
+SILENCE_THRESH = -40      # in dBFS
+KEEP_SILENCE = 250        # in ms
+WHISPER_MODEL_SIZE = "turbo" # Set the OpenAI Whisper model, examples can be found here: https://github.com/openai/whisper?tab=readme-ov-file#available-models-and-languages
+WHISPER_DEVICE = "cuda" # Set between CPU or CUDA for GPU accelleration
 # ===================================
 ```
 
