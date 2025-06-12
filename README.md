@@ -101,8 +101,3 @@ Coming soon.
 
 ---
 
-## License
-
-[MIT](LICENSE) – Please see the LICENSE file for more details.
-
----
